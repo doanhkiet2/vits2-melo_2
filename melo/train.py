@@ -78,13 +78,13 @@ def run():
     collate_fn = TextAudioSpeakerCollate()
     train_loader = DataLoader(
         train_dataset,
-        num_workers=2,
+        num_workers=0,
         shuffle=False,
         pin_memory=True,
         collate_fn=collate_fn,
         batch_sampler=train_sampler,
-        persistent_workers=True,
-        prefetch_factor=4,
+        persistent_workers=False,
+        prefetch_factor=None,
     )  # DataLoader config could be adjusted.
     if rank == 0:
         eval_dataset = TextAudioSpeakerLoader(hps.data.validation_files, hps.data)
@@ -167,11 +167,11 @@ def run():
     net_g = DDP(net_g, device_ids=[rank], find_unused_parameters=True)
     net_d = DDP(net_d, device_ids=[rank], find_unused_parameters=True)
 
-    if not hps.pretrain_G or not hps.pretrain_D or not hps.pretrain_dur:
-        pretrain_G, pretrain_D, pretrain_dur = load_pretrain_model()
-        hps.pretrain_G = pretrain_G
-        hps.pretrain_D = pretrain_D
-        hps.pretrain_dur = pretrain_dur
+    # if not hps.pretrain_G or not hps.pretrain_D or not hps.pretrain_dur:
+    #     pretrain_G, pretrain_D, pretrain_dur = load_pretrain_model()
+    #     hps.pretrain_G = pretrain_G
+    #     hps.pretrain_D = pretrain_D
+    #     hps.pretrain_dur = pretrain_dur
 
     if hps.pretrain_G:
         print("Loading pretrain model for G: ", hps.pretrain_G)

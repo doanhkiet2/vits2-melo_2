@@ -111,7 +111,7 @@ def rational_quadratic_spline(
     min_bin_height=DEFAULT_MIN_BIN_HEIGHT,
     min_derivative=DEFAULT_MIN_DERIVATIVE,
 ):
-    if torch.min(inputs) < left or torch.max(inputs) > right:
+    if inputs.numel() > 0 and (torch.min(inputs) < left or torch.max(inputs) > right):
         raise ValueError("Input to a transform is not within its domain")
 
     num_bins = unnormalized_widths.shape[-1]

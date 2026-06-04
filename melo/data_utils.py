@@ -49,7 +49,6 @@ class TextAudioSpeakerLoader(torch.utils.data.Dataset):
         random.shuffle(self.audiopaths_sid_text)
         self._filter()
 
-
     def _filter(self):
         """
         Filter text & store spec lengths
@@ -62,9 +61,7 @@ class TextAudioSpeakerLoader(torch.utils.data.Dataset):
         lengths = []
         skipped = 0
         logger.info("Init dataset...")
-        for item in tqdm(
-            self.audiopaths_sid_text
-        ):
+        for item in tqdm(self.audiopaths_sid_text):
             try:
                 _id, spk, language, text, phones, tone, word2ph = item
             except:
@@ -81,7 +78,7 @@ class TextAudioSpeakerLoader(torch.utils.data.Dataset):
                 lengths.append(os.path.getsize(audiopath) // (2 * self.hop_length))
             else:
                 skipped += 1
-        logger.info(f'min: {min(lengths)}; max: {max(lengths)}' )
+        logger.info(f"min: {min(lengths)}; max: {max(lengths)}")
         logger.info(
             "skipped: "
             + str(skipped)
@@ -100,7 +97,7 @@ class TextAudioSpeakerLoader(torch.utils.data.Dataset):
         )
 
         spec, wav = self.get_audio(audiopath)
-        sid = int(getattr(self.spk_map, sid, '0'))
+        sid = int(getattr(self.spk_map, sid, "0"))
         sid = torch.LongTensor([sid])
         return (phones, spec, wav, sid, tone, language, bert, ja_bert)
 
@@ -162,7 +159,12 @@ class TextAudioSpeakerLoader(torch.utils.data.Dataset):
             assert bert.shape[-1] == len(phone)
         except Exception as e:
             # print(e, wav_path, bert_path, bert.shape, len(phone))
-            bert = get_bert(text, word2ph, language_str)
+            bert = get_bert(
+                text,
+                word2ph,
+                language_str,
+                "cuda" if torch.cuda.is_available() else "cpu",
+            )
             torch.save(bert, bert_path)
             assert bert.shape[-1] == len(phone), phone
 
@@ -173,7 +175,18 @@ class TextAudioSpeakerLoader(torch.utils.data.Dataset):
             if language_str in ["ZH"]:
                 bert = bert
                 ja_bert = torch.zeros(768, len(phone))
-            elif language_str in ["JP", "EN", "ZH_MIX_EN", "KR", 'SP', 'ES', 'FR', 'DE', 'RU', "VI"]:
+            elif language_str in [
+                "JP",
+                "EN",
+                "ZH_MIX_EN",
+                "KR",
+                "SP",
+                "ES",
+                "FR",
+                "DE",
+                "RU",
+                "VI",
+            ]:
                 ja_bert = bert
                 bert = torch.zeros(1024, len(phone))
             else:
@@ -309,7 +322,7 @@ class DistributedBucketSampler(torch.utils.data.distributed.DistributedSampler):
         self.buckets, self.num_samples_per_bucket = self._create_buckets()
         self.total_size = sum(self.num_samples_per_bucket)
         self.num_samples = self.total_size // self.num_replicas
-        print('buckets:', self.num_samples_per_bucket)
+        print("buckets:", self.num_samples_per_bucket)
 
     def _create_buckets(self):
         buckets = [[] for _ in range(len(self.boundaries) - 1)]

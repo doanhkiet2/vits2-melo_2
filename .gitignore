@@ -9,4 +9,8 @@ build/
 logs/
 *.pth
 __pycache__/
-*.wav
+*.wavlogs/
+*.pth
+*.pt
+events.out.tfevents*
+__pycache__/
