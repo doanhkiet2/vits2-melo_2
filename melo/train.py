@@ -48,7 +48,7 @@ global_step = 0
 
 def run():
     hps = utils.get_hparams()
-    local_rank = int(os.environ["LOCAL_RANK"])
+    local_rank = int(os.environ.get("LOCAL_RANK", 0))
     dist.init_process_group(
         backend="gloo",
         init_method="env://",  # Due to some training problem,we proposed to use gloo instead of nccl.
@@ -56,7 +56,7 @@ def run():
     )  # Use torchrun instead of mp.spawn
     rank = dist.get_rank()
     n_gpus = dist.get_world_size()
-    
+
     torch.manual_seed(hps.train.seed)
     torch.cuda.set_device(rank)
     global global_step
@@ -78,7 +78,7 @@ def run():
     collate_fn = TextAudioSpeakerCollate()
     train_loader = DataLoader(
         train_dataset,
-        num_workers=16,
+        num_workers=2,
         shuffle=False,
         pin_memory=True,
         collate_fn=collate_fn,
@@ -165,7 +165,7 @@ def run():
         optim_dur_disc = None
     net_g = DDP(net_g, device_ids=[rank], find_unused_parameters=True)
     net_d = DDP(net_d, device_ids=[rank], find_unused_parameters=True)
-    
+
     if not hps.pretrain_G or not hps.pretrain_D or not hps.pretrain_dur:
         pretrain_G, pretrain_D, pretrain_dur = load_pretrain_model()
         hps.pretrain_G = pretrain_G
@@ -173,59 +173,47 @@ def run():
         hps.pretrain_dur = pretrain_dur
 
     if hps.pretrain_G:
-        print("Loading pretrain model for G: ",  hps.pretrain_G)
-        utils.load_checkpoint(
-                hps.pretrain_G,
-                net_g,
-                None,
-                skip_optimizer=True
-            )
+        print("Loading pretrain model for G: ", hps.pretrain_G)
+        utils.load_checkpoint(hps.pretrain_G, net_g, None, skip_optimizer=True)
     if hps.pretrain_D:
-        print("Loading pretrain model for D: ",  hps.pretrain_D)
-        utils.load_checkpoint(
-                hps.pretrain_D,
-                net_d,
-                None,
-                skip_optimizer=True
-            )
-
+        print("Loading pretrain model for D: ", hps.pretrain_D)
+        utils.load_checkpoint(hps.pretrain_D, net_d, None, skip_optimizer=True)
 
     if net_dur_disc is not None:
         net_dur_disc = DDP(net_dur_disc, device_ids=[rank], find_unused_parameters=True)
         if hps.pretrain_dur:
-            print("Loading pretrain model for Duration Discriminator: ",  hps.pretrain_dur)
+            print(
+                "Loading pretrain model for Duration Discriminator: ", hps.pretrain_dur
+            )
             utils.load_checkpoint(
-                    hps.pretrain_dur,
-                    net_dur_disc,
-                    None,
-                    skip_optimizer=True
-                )
-                
+                hps.pretrain_dur, net_dur_disc, None, skip_optimizer=True
+            )
+
     try:
         if net_dur_disc is not None:
             _, _, dur_resume_lr, epoch_str = utils.load_checkpoint(
                 utils.latest_checkpoint_path(hps.model_dir, "DUR_*.pth"),
                 net_dur_disc,
                 optim_dur_disc,
-                skip_optimizer=hps.train.skip_optimizer
-                if "skip_optimizer" in hps.train
-                else True,
+                skip_optimizer=(
+                    hps.train.skip_optimizer if "skip_optimizer" in hps.train else True
+                ),
             )
             _, optim_g, g_resume_lr, epoch_str = utils.load_checkpoint(
                 utils.latest_checkpoint_path(hps.model_dir, "G_*.pth"),
                 net_g,
                 optim_g,
-                skip_optimizer=hps.train.skip_optimizer
-                if "skip_optimizer" in hps.train
-                else True,
+                skip_optimizer=(
+                    hps.train.skip_optimizer if "skip_optimizer" in hps.train else True
+                ),
             )
             _, optim_d, d_resume_lr, epoch_str = utils.load_checkpoint(
                 utils.latest_checkpoint_path(hps.model_dir, "D_*.pth"),
                 net_d,
                 optim_d,
-                skip_optimizer=hps.train.skip_optimizer
-                if "skip_optimizer" in hps.train
-                else True,
+                skip_optimizer=(
+                    hps.train.skip_optimizer if "skip_optimizer" in hps.train else True
+                ),
             )
             if not optim_g.param_groups[0].get("initial_lr"):
                 optim_g.param_groups[0]["initial_lr"] = g_resume_lr
@@ -631,7 +619,7 @@ def evaluate(hps, generator, eval_loader, writer_eval):
         audio_sampling_rate=hps.data.sampling_rate,
     )
     generator.train()
-    print('Evauate done')
+    print("Evauate done")
     torch.cuda.empty_cache()
 
 
