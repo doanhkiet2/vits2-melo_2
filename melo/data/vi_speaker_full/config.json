@@ -18,7 +18,7 @@
     "warmup_epochs": 0,
     "c_mel": 45,
     "c_kl": 1.0,
-    "skip_optimizer": true,
+    "skip_optimizer": false,
     "device": "cuda:0",
     "num_workers": 2,
     "keep_ckpts": 5
