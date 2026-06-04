@@ -28,7 +28,7 @@ from losses import generator_loss, discriminator_loss, feature_loss, kl_loss
 from mel_processing import mel_spectrogram_torch, spec_to_mel_torch
 from melo.text.symbols import symbols
 from melo.download_utils import load_pretrain_model
-
+MAX_EVAL_BATCHES = 20
 torch.backends.cuda.matmul.allow_tf32 = True
 torch.backends.cudnn.allow_tf32 = (
     True  # If encontered training problem,please try to disable TF32.
@@ -108,6 +108,7 @@ def run():
         print("Using normal MAS for VITS1")
         mas_noise_scale_initial = 0.0
         noise_scale_delta = 0.0
+    net_dur_disc = None
     if (
         "use_duration_discriminator" in hps.model.keys()
         and hps.model.use_duration_discriminator is True
@@ -547,6 +548,8 @@ def evaluate(hps, generator, eval_loader, writer_eval):
             bert,
             ja_bert,
         ) in enumerate(tqdm(eval_loader)):
+            if batch_idx >= MAX_EVAL_BATCHES:
+                break
             x, x_lengths = x.cuda(), x_lengths.cuda()
             spec, spec_lengths = spec.cuda(), spec_lengths.cuda()
             y, y_lengths = y.cuda(), y_lengths.cuda()
