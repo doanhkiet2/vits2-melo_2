@@ -1,4 +1,4 @@
-# flake8: noqa: E402
+#abs
 
 import os
 import torch
@@ -48,6 +48,7 @@ global_step = 0
 
 def run():
     hps = utils.get_hparams()
+    # local_rank = int(os.environ["LOCAL_RANK"])
     local_rank = int(os.environ.get("LOCAL_RANK", 0))
     dist.init_process_group(
         backend="gloo",
@@ -78,13 +79,13 @@ def run():
     collate_fn = TextAudioSpeakerCollate()
     train_loader = DataLoader(
         train_dataset,
-        num_workers=0,
+        num_workers=4,
         shuffle=False,
         pin_memory=True,
         collate_fn=collate_fn,
         batch_sampler=train_sampler,
-        persistent_workers=False,
-        prefetch_factor=None,
+        persistent_workers=True,
+        prefetch_factor=4,
     )  # DataLoader config could be adjusted.
     if rank == 0:
         eval_dataset = TextAudioSpeakerLoader(hps.data.validation_files, hps.data)
@@ -108,7 +109,7 @@ def run():
         print("Using normal MAS for VITS1")
         mas_noise_scale_initial = 0.0
         noise_scale_delta = 0.0
-    net_dur_disc = None
+    # net_dur_disc = None
     if (
         "use_duration_discriminator" in hps.model.keys()
         and hps.model.use_duration_discriminator is True
@@ -548,8 +549,8 @@ def evaluate(hps, generator, eval_loader, writer_eval):
             bert,
             ja_bert,
         ) in enumerate(tqdm(eval_loader)):
-            if batch_idx >= MAX_EVAL_BATCHES:
-                break
+            # if batch_idx >= MAX_EVAL_BATCHES:
+            #     break
             x, x_lengths = x.cuda(), x_lengths.cuda()
             spec, spec_lengths = spec.cuda(), spec_lengths.cuda()
             y, y_lengths = y.cuda(), y_lengths.cuda()

@@ -1,3 +1,4 @@
+# comment dòng 124 để không sinh spec
 import os
 import random
 import torch
@@ -121,6 +122,7 @@ class TextAudioSpeakerLoader(torch.utils.data.Dataset):
         try:
             spec = torch.load(spec_filename, weights_only=True)
             assert False
+
         except:
             if self.use_mel_spec_posterior:
                 spec = mel_spectrogram_torch(

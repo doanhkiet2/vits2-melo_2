@@ -10,3 +10,5 @@ build/
 __pycache__/
 *.wav
 *.bert.pt
+events.out.tfevents*
+*.spec.pt
