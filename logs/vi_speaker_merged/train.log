@@ -832,8 +832,79 @@
 2026-06-08 16:18:06,280	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 69 to ./logs/vi_speaker_merged/G_97500.pth
 2026-06-08 16:19:27,159	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 69 to ./logs/vi_speaker_merged/D_97500.pth
 2026-06-08 16:20:44,952	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 69 to ./logs/vi_speaker_merged/DUR_97500.pth
-2026-06-08 16:28:56,561	vi_speaker_merged	INFO	{'train': {'log_interval': 200, 'eval_interval': 2500, 'seed': 52, 'epochs': 10000, 'learning_rate': 0.0003, 'betas': [0.8, 0.99], 'eps': 1e-09, 'batch_size': 8, 'fp16_run': False, 'lr_decay': 0.999875, 'segment_size': 16384, 'init_lr_ratio': 1, 'warmup_epochs': 0, 'c_mel': 45, 'c_kl': 1.0, 'skip_optimizer': True, 'device': 'cuda:0'}, 'data': {'training_files': '/content/vits2-melo/melo/data/vi_speaker_44100_merged/train.list', 'validation_files': '/content/vits2-melo/melo/data/vi_speaker_44100_merged/val.list', 'max_wav_value': 32768.0, 'sampling_rate': 44100, 'filter_length': 2048, 'hop_length': 512, 'win_length': 2048, 'n_mel_channels': 128, 'mel_fmin': 0.0, 'mel_fmax': None, 'add_blank': True, 'n_speakers': 256, 'cleaned_text': True, 'spk2id': {'VI-default': 0}}, 'model': {'use_spk_conditioned_encoder': True, 'use_noise_scaled_mas': True, 'use_mel_posterior_encoder': False, 'use_duration_discriminator': True, 'inter_channels': 192, 'hidden_channels': 192, 'filter_channels': 768, 'n_heads': 2, 'n_layers': 6, 'n_layers_trans_flow': 3, 'kernel_size': 3, 'p_dropout': 0.1, 'resblock': '1', 'resblock_kernel_sizes': [3, 7, 11], 'resblock_dilation_sizes': [[1, 3, 5], [1, 3, 5], [1, 3, 5]], 'upsample_rates': [8, 8, 2, 2, 2], 'upsample_initial_channel': 512, 'upsample_kernel_sizes': [16, 16, 8, 2, 2], 'n_layers_q': 3, 'use_spectral_norm': False, 'gin_channels': 256}, 'device': 'cuda:0', 'num_languages': 10, 'num_tones': 24, 'symbols': ['_', '"', '(', ')', '*', '/', ':', 'AA', 'E', 'EE', 'En', 'N', 'OO', 'Q', 'V', '[', '\\', ']', '^', 'a', 'a:', 'aa', 'ae', 'ah', 'ai', 'an', 'ang', 'ao', 'aw', 'ay', 'b', 'by', 'c', 'ch', 'd', 'dh', 'dy', 'e', 'e:', 'eh', 'ei', 'en', 'eng', 'er', 'ey', 'f', 'g', 'gy', 'h', 'hh', 'hy', 'i', 'i0', 'i:', 'ia', 'ian', 'iang', 'iao', 'ie', 'ih', 'in', 'ing', 'iong', 'ir', 'iu', 'iy', 'j', 'jh', 'k', 'ky', 'l', 'm', 'my', 'n', 'ng', 'ny', 'o', 'o:', 'ong', 'ou', 'ow', 'oy', 'p', 'py', 'q', 'r', 'ry', 's', 'sh', 't', 'th', 'ts', 'ty', 'u', 'u:', 'ua', 'uai', 'uan', 'uang', 'uh', 'ui', 'un', 'uo', 'uw', 'v', 'van', 've', 'vn', 'w', 'x', 'y', 'z', 'zh', 'zy', '~', '¡', '¿', 'æ', 'ç', 'ð', 'ø', 'ŋ', 'œ', 'ɐ', 'ɑ', 'ɒ', 'ɔ', 'ɕ', 'ə', 'ɛ', 'ɜ', 'ɡ', 'ɣ', 'ɥ', 'ɦ', 'ɪ', 'ɫ', 'ɬ', 'ɭ', 'ɯ', 'ɲ', 'ɵ', 'ɸ', 'ɹ', 'ɾ', 'ʁ', 'ʃ', 'ʊ', 'ʌ', 'ʎ', 'ʏ', 'ʑ', 'ʒ', 'ʝ', 'ʲ', 'ˈ', 'ˌ', 'ː', '̃', '̩', 'β', 'θ', 'ᄀ', 'k͡p', 'ˈa', 'ɤ', 'ˈɛ', 'ˈi', 'ă', 'ˈe', 'ʔ', 'ŋ͡m', 'tʰ', 'ɤ̆', 'ᄌ', 'ᄍ', 'ᄎ', 'ᄏ', 'ᄐ', 'ᄑ', 'ᄒ', 'ᅡ', 'ᅢ', 'ᅣ', 'ᅤ', 'ᅥ', 'ᅦ', 'ᅧ', 'ᅨ', 'ᅩ', 'ᅪ', 'ᅫ', 'ᅬ', 'ᅭ', 'ᅮ', 'ᅯ', 'ᅰ', 'ᅱ', 'ᅲ', 'ᅳ', 'ᅴ', 'ᅵ', 'ᆨ', 'ᆫ', 'ᆮ', 'ᆯ', 'ᆷ', 'ᆸ', 'ᆼ', 'ㄸ', '!', '?', '…', ',', '.', "'", '-', 'SP', 'UNK'], 'model_dir': './logs/vi_speaker_merged', 'pretrain_G': None, 'pretrain_D': None, 'pretrain_dur': None, 'port': 10000}
-2026-06-08 16:28:56,561	vi_speaker_merged	WARNING	/content/vits2-melo/melo is not a git repository, therefore hash value comparison will be ignored.
-2026-06-08 16:29:01,558	vi_speaker_merged	INFO	Loaded checkpoint './logs/vi_speaker_merged/DUR_97500.pth' (iteration 69)
-2026-06-08 16:29:05,397	vi_speaker_merged	INFO	Loaded checkpoint './logs/vi_speaker_merged/G_97500.pth' (iteration 69)
-2026-06-08 16:29:09,275	vi_speaker_merged	INFO	Loaded checkpoint './logs/vi_speaker_merged/D_97500.pth' (iteration 69)
+2026-06-08 17:22:47,448	vi_speaker_merged	INFO	{'train': {'log_interval': 200, 'eval_interval': 3000, 'seed': 52, 'epochs': 10000, 'learning_rate': 0.0003, 'betas': [0.8, 0.99], 'eps': 1e-09, 'batch_size': 8, 'fp16_run': False, 'lr_decay': 0.999875, 'segment_size': 16384, 'init_lr_ratio': 1, 'warmup_epochs': 0, 'c_mel': 45, 'c_kl': 1.0, 'skip_optimizer': True, 'device': 'cuda:0'}, 'data': {'training_files': '/content/vits2-melo/melo/data/vi_speaker_44100_merged/train.list', 'validation_files': '/content/vits2-melo/melo/data/vi_speaker_44100_merged/val.list', 'max_wav_value': 32768.0, 'sampling_rate': 44100, 'filter_length': 2048, 'hop_length': 512, 'win_length': 2048, 'n_mel_channels': 128, 'mel_fmin': 0.0, 'mel_fmax': None, 'add_blank': True, 'n_speakers': 256, 'cleaned_text': True, 'spk2id': {'VI-default': 0}}, 'model': {'use_spk_conditioned_encoder': True, 'use_noise_scaled_mas': True, 'use_mel_posterior_encoder': False, 'use_duration_discriminator': True, 'inter_channels': 192, 'hidden_channels': 192, 'filter_channels': 768, 'n_heads': 2, 'n_layers': 6, 'n_layers_trans_flow': 3, 'kernel_size': 3, 'p_dropout': 0.1, 'resblock': '1', 'resblock_kernel_sizes': [3, 7, 11], 'resblock_dilation_sizes': [[1, 3, 5], [1, 3, 5], [1, 3, 5]], 'upsample_rates': [8, 8, 2, 2, 2], 'upsample_initial_channel': 512, 'upsample_kernel_sizes': [16, 16, 8, 2, 2], 'n_layers_q': 3, 'use_spectral_norm': False, 'gin_channels': 256}, 'device': 'cuda:0', 'num_languages': 10, 'num_tones': 24, 'symbols': ['_', '"', '(', ')', '*', '/', ':', 'AA', 'E', 'EE', 'En', 'N', 'OO', 'Q', 'V', '[', '\\', ']', '^', 'a', 'a:', 'aa', 'ae', 'ah', 'ai', 'an', 'ang', 'ao', 'aw', 'ay', 'b', 'by', 'c', 'ch', 'd', 'dh', 'dy', 'e', 'e:', 'eh', 'ei', 'en', 'eng', 'er', 'ey', 'f', 'g', 'gy', 'h', 'hh', 'hy', 'i', 'i0', 'i:', 'ia', 'ian', 'iang', 'iao', 'ie', 'ih', 'in', 'ing', 'iong', 'ir', 'iu', 'iy', 'j', 'jh', 'k', 'ky', 'l', 'm', 'my', 'n', 'ng', 'ny', 'o', 'o:', 'ong', 'ou', 'ow', 'oy', 'p', 'py', 'q', 'r', 'ry', 's', 'sh', 't', 'th', 'ts', 'ty', 'u', 'u:', 'ua', 'uai', 'uan', 'uang', 'uh', 'ui', 'un', 'uo', 'uw', 'v', 'van', 've', 'vn', 'w', 'x', 'y', 'z', 'zh', 'zy', '~', '¡', '¿', 'æ', 'ç', 'ð', 'ø', 'ŋ', 'œ', 'ɐ', 'ɑ', 'ɒ', 'ɔ', 'ɕ', 'ə', 'ɛ', 'ɜ', 'ɡ', 'ɣ', 'ɥ', 'ɦ', 'ɪ', 'ɫ', 'ɬ', 'ɭ', 'ɯ', 'ɲ', 'ɵ', 'ɸ', 'ɹ', 'ɾ', 'ʁ', 'ʃ', 'ʊ', 'ʌ', 'ʎ', 'ʏ', 'ʑ', 'ʒ', 'ʝ', 'ʲ', 'ˈ', 'ˌ', 'ː', '̃', '̩', 'β', 'θ', 'ᄀ', 'k͡p', 'ˈa', 'ɤ', 'ˈɛ', 'ˈi', 'ă', 'ˈe', 'ʔ', 'ŋ͡m', 'tʰ', 'ɤ̆', 'ᄌ', 'ᄍ', 'ᄎ', 'ᄏ', 'ᄐ', 'ᄑ', 'ᄒ', 'ᅡ', 'ᅢ', 'ᅣ', 'ᅤ', 'ᅥ', 'ᅦ', 'ᅧ', 'ᅨ', 'ᅩ', 'ᅪ', 'ᅫ', 'ᅬ', 'ᅭ', 'ᅮ', 'ᅯ', 'ᅰ', 'ᅱ', 'ᅲ', 'ᅳ', 'ᅴ', 'ᅵ', 'ᆨ', 'ᆫ', 'ᆮ', 'ᆯ', 'ᆷ', 'ᆸ', 'ᆼ', 'ㄸ', '!', '?', '…', ',', '.', "'", '-', 'SP', 'UNK'], 'model_dir': './logs/vi_speaker_merged', 'pretrain_G': None, 'pretrain_D': None, 'pretrain_dur': None, 'port': 10000}
+2026-06-08 17:22:47,449	vi_speaker_merged	WARNING	/content/vits2-melo/melo is not a git repository, therefore hash value comparison will be ignored.
+2026-06-08 17:22:52,166	vi_speaker_merged	INFO	Loaded checkpoint './logs/vi_speaker_merged/DUR_97500.pth' (iteration 69)
+2026-06-08 17:22:55,551	vi_speaker_merged	INFO	Loaded checkpoint './logs/vi_speaker_merged/G_97500.pth' (iteration 69)
+2026-06-08 17:22:57,787	vi_speaker_merged	INFO	Loaded checkpoint './logs/vi_speaker_merged/D_97500.pth' (iteration 69)
+2026-06-08 17:30:29,069	vi_speaker_merged	INFO	Train Epoch: 69 [12%]
+2026-06-08 17:30:29,072	vi_speaker_merged	INFO	[1.9287455081939697, 2.7861526012420654, 12.688919067382812, 14.345172882080078, 1.6597940921783447, 1.469050407409668, 96800, 0.0003]
+2026-06-08 17:37:28,535	vi_speaker_merged	INFO	Train Epoch: 69 [26%]
+2026-06-08 17:37:28,919	vi_speaker_merged	INFO	[2.0095982551574707, 3.0795228481292725, 17.7940731048584, 18.043441772460938, 1.7444210052490234, 1.3246740102767944, 97000, 0.0003]
+2026-06-08 17:44:13,114	vi_speaker_merged	INFO	Train Epoch: 69 [40%]
+2026-06-08 17:44:13,118	vi_speaker_merged	INFO	[2.1856446266174316, 3.306367874145508, 13.958762168884277, 16.401187896728516, 1.702660322189331, 1.2920408248901367, 97200, 0.0003]
+2026-06-08 17:50:50,858	vi_speaker_merged	INFO	Train Epoch: 69 [54%]
+2026-06-08 17:50:50,863	vi_speaker_merged	INFO	[2.127927303314209, 2.8299291133880615, 12.314502716064453, 14.981280326843262, 1.708229422569275, 1.2765402793884277, 97400, 0.0003]
+2026-06-08 17:57:11,229	vi_speaker_merged	INFO	Train Epoch: 69 [68%]
+2026-06-08 17:57:11,232	vi_speaker_merged	INFO	[2.032804012298584, 2.8467819690704346, 12.724531173706055, 14.629497528076172, 1.6750853061676025, 1.2042133808135986, 97600, 0.0003]
+2026-06-08 18:03:29,319	vi_speaker_merged	INFO	Train Epoch: 69 [82%]
+2026-06-08 18:03:29,324	vi_speaker_merged	INFO	[2.003767251968384, 3.143670082092285, 15.062884330749512, 16.894376754760742, 1.7095983028411865, 1.4142119884490967, 97800, 0.0003]
+2026-06-08 18:09:42,387	vi_speaker_merged	INFO	Train Epoch: 69 [97%]
+2026-06-08 18:09:42,391	vi_speaker_merged	INFO	[2.199340581893921, 2.6634786128997803, 13.955609321594238, 15.351612091064453, 1.6878126859664917, 1.2359850406646729, 98000, 0.0003]
+2026-06-08 18:11:10,465	vi_speaker_merged	INFO	====> Epoch: 69
+2026-06-08 18:16:07,316	vi_speaker_merged	INFO	Train Epoch: 70 [11%]
+2026-06-08 18:16:07,336	vi_speaker_merged	INFO	[2.2001447677612305, 2.7955641746520996, 12.109647750854492, 13.898176193237305, 1.662740707397461, 1.327242374420166, 98200, 0.0002999625]
+2026-06-08 18:22:32,740	vi_speaker_merged	INFO	Train Epoch: 70 [25%]
+2026-06-08 18:22:32,750	vi_speaker_merged	INFO	[1.7941033840179443, 3.1538784503936768, 17.674301147460938, 17.361848831176758, 1.6794836521148682, 1.129206657409668, 98400, 0.0002999625]
+2026-06-08 18:29:00,011	vi_speaker_merged	INFO	Train Epoch: 70 [39%]
+2026-06-08 18:29:00,037	vi_speaker_merged	INFO	[2.3277597427368164, 2.795527935028076, 14.122243881225586, 16.00627899169922, 1.624659538269043, 1.220493197441101, 98600, 0.0002999625]
+2026-06-08 18:35:25,458	vi_speaker_merged	INFO	Train Epoch: 70 [53%]
+2026-06-08 18:35:25,462	vi_speaker_merged	INFO	[2.0723865032196045, 2.8048160076141357, 14.394416809082031, 16.484432220458984, 1.6541880369186401, 1.1303964853286743, 98800, 0.0002999625]
+2026-06-08 18:41:46,432	vi_speaker_merged	INFO	Train Epoch: 70 [67%]
+2026-06-08 18:41:47,146	vi_speaker_merged	INFO	[2.0690417289733887, 2.9868526458740234, 14.743317604064941, 15.855500221252441, 1.7365249395370483, 1.2209306955337524, 99000, 0.0002999625]
+2026-06-08 19:01:41,362	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 70 to ./logs/vi_speaker_merged/G_99000.pth
+2026-06-08 19:02:54,475	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 70 to ./logs/vi_speaker_merged/D_99000.pth
+2026-06-08 19:04:18,892	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 70 to ./logs/vi_speaker_merged/DUR_99000.pth
+2026-06-08 19:12:35,147	vi_speaker_merged	INFO	Train Epoch: 70 [81%]
+2026-06-08 19:12:36,914	vi_speaker_merged	INFO	[1.8722405433654785, 3.271946907043457, 15.018560409545898, 16.28794288635254, 1.700392723083496, 0.9582415819168091, 99200, 0.0002999625]
+2026-06-08 19:21:33,182	vi_speaker_merged	INFO	Train Epoch: 70 [95%]
+2026-06-08 19:21:33,198	vi_speaker_merged	INFO	[2.0125906467437744, 3.243593215942383, 13.597293853759766, 16.320648193359375, 1.6719547510147095, 1.2799971103668213, 99400, 0.0002999625]
+2026-06-08 19:24:27,388	vi_speaker_merged	INFO	====> Epoch: 70
+2026-06-08 19:30:48,086	vi_speaker_merged	INFO	Train Epoch: 71 [9%]
+2026-06-08 19:30:48,205	vi_speaker_merged	INFO	[2.231656789779663, 2.628643274307251, 12.916280746459961, 16.52275848388672, 1.6890718936920166, 1.193812370300293, 99600, 0.0002999250046875]
+2026-06-08 19:39:55,748	vi_speaker_merged	INFO	Train Epoch: 71 [23%]
+2026-06-08 19:39:58,300	vi_speaker_merged	INFO	[1.9877598285675049, 3.400754451751709, 17.79018783569336, 16.935592651367188, 1.7032123804092407, 1.2630921602249146, 99800, 0.0002999250046875]
+2026-06-08 19:48:35,534	vi_speaker_merged	INFO	Train Epoch: 71 [37%]
+2026-06-08 19:48:36,261	vi_speaker_merged	INFO	[2.106311321258545, 2.7544596195220947, 13.372296333312988, 15.912134170532227, 1.6740007400512695, 1.3970595598220825, 100000, 0.0002999250046875]
+2026-06-08 19:57:31,930	vi_speaker_merged	INFO	Train Epoch: 71 [51%]
+2026-06-08 19:57:32,242	vi_speaker_merged	INFO	[1.8728219270706177, 3.105865478515625, 16.34929847717285, 16.469655990600586, 1.6630491018295288, 1.4091769456863403, 100200, 0.0002999250046875]
+2026-06-08 20:05:57,105	vi_speaker_merged	INFO	Train Epoch: 71 [65%]
+2026-06-08 20:05:57,625	vi_speaker_merged	INFO	[2.3380308151245117, 2.510260581970215, 11.840424537658691, 15.592118263244629, 1.7262482643127441, 1.2115328311920166, 100400, 0.0002999250046875]
+2026-06-08 20:14:33,096	vi_speaker_merged	INFO	Train Epoch: 71 [80%]
+2026-06-08 20:14:33,099	vi_speaker_merged	INFO	[2.027487277984619, 3.3634719848632812, 13.002236366271973, 16.124303817749023, 1.6682493686676025, 1.2916829586029053, 100600, 0.0002999250046875]
+2026-06-08 20:23:01,524	vi_speaker_merged	INFO	Train Epoch: 71 [94%]
+2026-06-08 20:23:01,526	vi_speaker_merged	INFO	[1.9126865863800049, 3.2719886302948, 16.580303192138672, 18.300031661987305, 1.6639046669006348, 1.0843650102615356, 100800, 0.0002999250046875]
+2026-06-08 20:26:28,955	vi_speaker_merged	INFO	====> Epoch: 71
+2026-06-08 20:31:25,230	vi_speaker_merged	INFO	Train Epoch: 72 [8%]
+2026-06-08 20:31:25,233	vi_speaker_merged	INFO	[2.1656627655029297, 2.8770554065704346, 12.483073234558105, 15.840333938598633, 1.6668472290039062, 1.3172606229782104, 101000, 0.00029988751406191406]
+2026-06-08 20:40:04,546	vi_speaker_merged	INFO	Train Epoch: 72 [22%]
+2026-06-08 20:40:07,655	vi_speaker_merged	INFO	[2.2668299674987793, 2.5991525650024414, 10.281296730041504, 16.03656578063965, 1.6690213680267334, 1.2759028673171997, 101200, 0.00029988751406191406]
+2026-06-08 20:48:35,127	vi_speaker_merged	INFO	Train Epoch: 72 [36%]
+2026-06-08 20:48:36,327	vi_speaker_merged	INFO	[2.0392322540283203, 2.9462015628814697, 12.621689796447754, 16.221975326538086, 1.6726222038269043, 1.3612867593765259, 101400, 0.00029988751406191406]
+2026-06-08 20:56:57,527	vi_speaker_merged	INFO	Train Epoch: 72 [50%]
+2026-06-08 20:56:59,189	vi_speaker_merged	INFO	[2.155783176422119, 2.6974074840545654, 13.813617706298828, 15.860237121582031, 1.738667368888855, 1.2896779775619507, 101600, 0.00029988751406191406]
+2026-06-08 21:05:34,928	vi_speaker_merged	INFO	Train Epoch: 72 [64%]
+2026-06-08 21:05:35,562	vi_speaker_merged	INFO	[1.6380739212036133, 3.449608564376831, 19.114273071289062, 17.270265579223633, 1.7163541316986084, 1.5164939165115356, 101800, 0.00029988751406191406]
+2026-06-08 21:14:22,207	vi_speaker_merged	INFO	Train Epoch: 72 [78%]
+2026-06-08 21:14:22,485	vi_speaker_merged	INFO	[1.7383089065551758, 3.279642343521118, 17.12888526916504, 17.706615447998047, 1.6448769569396973, 1.2825584411621094, 102000, 0.00029988751406191406]
+2026-06-08 21:31:00,568	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 72 to ./logs/vi_speaker_merged/G_102000.pth
+2026-06-08 21:32:21,890	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 72 to ./logs/vi_speaker_merged/D_102000.pth
+2026-06-08 21:33:53,271	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 72 to ./logs/vi_speaker_merged/DUR_102000.pth
+2026-06-08 21:33:56,049	vi_speaker_merged	INFO	.. Free up space by deleting ckpt ./logs/vi_speaker_merged/D_97500.pth
+2026-06-08 21:41:49,150	vi_speaker_merged	INFO	Train Epoch: 72 [92%]
+2026-06-08 21:41:49,775	vi_speaker_merged	INFO	[1.841908574104309, 3.2620139122009277, 17.17633819580078, 16.752527236938477, 1.6941297054290771, 1.1676161289215088, 102200, 0.00029988751406191406]
+2026-06-08 21:46:24,677	vi_speaker_merged	INFO	====> Epoch: 72
+2026-06-08 21:50:19,450	vi_speaker_merged	INFO	Train Epoch: 73 [6%]
+2026-06-08 21:50:20,931	vi_speaker_merged	INFO	[1.9257184267044067, 3.092308759689331, 15.921180725097656, 17.724838256835938, 1.6777170896530151, 1.2581087350845337, 102400, 0.00029985002812265633]
+2026-06-08 21:58:50,330	vi_speaker_merged	INFO	Train Epoch: 73 [20%]
+2026-06-08 21:58:53,179	vi_speaker_merged	INFO	[1.8372890949249268, 3.096967935562134, 16.2087345123291, 18.626991271972656, 1.6125404834747314, 1.3252677917480469, 102600, 0.00029985002812265633]
