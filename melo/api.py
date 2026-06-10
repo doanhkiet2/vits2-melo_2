@@ -168,9 +168,9 @@ class TTS(nn.Module):
                 #
             # -------------------
             # nomilize âm thanh
-            # audio_list.append(audio)
-            audio = self.normalize_rms(audio, target_db=-20.0)
             audio_list.append(audio)
+            # audio = self.normalize_rms(audio, target_db=-20.0)
+            # audio_list.append(audio)
             # ------------------------
         torch.cuda.empty_cache()
         audio = self.audio_numpy_concat(

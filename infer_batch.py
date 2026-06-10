@@ -7,7 +7,7 @@ import subprocess
 from pathlib import Path
 
 
-MODEL = "/content/vits2-melo/logs/vi_speaker_merged/G_0.pth"
+MODEL = "/content/vits2-melo/logs/vi_speaker_merged/G_12000.pth"
 OUT_DIR = Path("/content/infer_test")
 MELO_DIR = "/content/vits2-melo"
 INFER_PY = "/content/vits2-melo/melo/infer.py"
