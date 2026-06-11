@@ -7,12 +7,20 @@ import subprocess
 from pathlib import Path
 
 
-MODEL = "/content/vits2-melo/logs/vi_speaker_merged/G_12000.pth"
+MODEL = "/content/vits2-melo/logs/vi_speaker_merged/G_16000.pth"
 OUT_DIR = Path("/content/infer_test")
 MELO_DIR = "/content/vits2-melo"
 INFER_PY = "/content/vits2-melo/melo/infer.py"
 
 TEXTS = [
+      # 1
+    "Hắn chậm rãi mở mắt, nhìn về phía chân trời xa xăm.",
+
+    # 2
+    "Nàng khẽ thở dài, trong lòng dâng lên một cảm giác bất an khó tả.",
+
+    # 3
+    "Trên con đường nhỏ phủ đầy sương sớm, tiếng bước chân vang lên rất nhẹ.",
 
     """
     Cuối hạ, cái nóng vẫn chưa tan, ánh nắng trên núi Độc Tô gay gắt chiếu xuống đỉnh đầu mọi người.
