@@ -274,3 +274,89 @@
 2026-06-11 09:45:04,723	vi_speaker_merged	INFO	====> Epoch: 13
 2026-06-11 09:52:54,763	vi_speaker_merged	INFO	Train Epoch: 14 [14%]
 2026-06-11 09:52:55,068	vi_speaker_merged	INFO	[2.331045627593994, 2.750032901763916, 16.74092674255371, 16.727079391479492, 1.7032809257507324, 1.4553146362304688, 16400, 0.00029985002812265633]
+2026-06-12 01:36:18,139	vi_speaker_merged	INFO	{'train': {'log_interval': 200, 'eval_interval': 2000, 'seed': 52, 'epochs': 10000, 'learning_rate': 0.0003, 'betas': [0.8, 0.99], 'eps': 1e-09, 'batch_size': 8, 'fp16_run': False, 'lr_decay': 0.999875, 'segment_size': 16384, 'init_lr_ratio': 1, 'warmup_epochs': 0, 'c_mel': 45, 'c_kl': 1.0, 'skip_optimizer': True, 'device': 'cuda:0'}, 'data': {'training_files': '/content/vits2-melo/melo/data/vi_speaker_44100_merged/train.list', 'validation_files': '/content/vits2-melo/melo/data/vi_speaker_44100_merged/val.list', 'max_wav_value': 32768.0, 'sampling_rate': 44100, 'filter_length': 2048, 'hop_length': 512, 'win_length': 2048, 'n_mel_channels': 128, 'mel_fmin': 0.0, 'mel_fmax': None, 'add_blank': True, 'n_speakers': 256, 'cleaned_text': True, 'spk2id': {'VI-default': 0}}, 'model': {'use_spk_conditioned_encoder': True, 'use_noise_scaled_mas': True, 'use_mel_posterior_encoder': False, 'use_duration_discriminator': True, 'inter_channels': 192, 'hidden_channels': 192, 'filter_channels': 768, 'n_heads': 2, 'n_layers': 6, 'n_layers_trans_flow': 3, 'kernel_size': 3, 'p_dropout': 0.1, 'resblock': '1', 'resblock_kernel_sizes': [3, 7, 11], 'resblock_dilation_sizes': [[1, 3, 5], [1, 3, 5], [1, 3, 5]], 'upsample_rates': [8, 8, 2, 2, 2], 'upsample_initial_channel': 512, 'upsample_kernel_sizes': [16, 16, 8, 2, 2], 'n_layers_q': 3, 'use_spectral_norm': False, 'gin_channels': 256}, 'device': 'cuda:0', 'num_languages': 10, 'num_tones': 24, 'symbols': ['_', '"', '(', ')', '*', '/', ':', 'AA', 'E', 'EE', 'En', 'N', 'OO', 'Q', 'V', '[', '\\', ']', '^', 'a', 'a:', 'aa', 'ae', 'ah', 'ai', 'an', 'ang', 'ao', 'aw', 'ay', 'b', 'by', 'c', 'ch', 'd', 'dh', 'dy', 'e', 'e:', 'eh', 'ei', 'en', 'eng', 'er', 'ey', 'f', 'g', 'gy', 'h', 'hh', 'hy', 'i', 'i0', 'i:', 'ia', 'ian', 'iang', 'iao', 'ie', 'ih', 'in', 'ing', 'iong', 'ir', 'iu', 'iy', 'j', 'jh', 'k', 'ky', 'l', 'm', 'my', 'n', 'ng', 'ny', 'o', 'o:', 'ong', 'ou', 'ow', 'oy', 'p', 'py', 'q', 'r', 'ry', 's', 'sh', 't', 'th', 'ts', 'ty', 'u', 'u:', 'ua', 'uai', 'uan', 'uang', 'uh', 'ui', 'un', 'uo', 'uw', 'v', 'van', 've', 'vn', 'w', 'x', 'y', 'z', 'zh', 'zy', '~', '¡', '¿', 'æ', 'ç', 'ð', 'ø', 'ŋ', 'œ', 'ɐ', 'ɑ', 'ɒ', 'ɔ', 'ɕ', 'ə', 'ɛ', 'ɜ', 'ɡ', 'ɣ', 'ɥ', 'ɦ', 'ɪ', 'ɫ', 'ɬ', 'ɭ', 'ɯ', 'ɲ', 'ɵ', 'ɸ', 'ɹ', 'ɾ', 'ʁ', 'ʃ', 'ʊ', 'ʌ', 'ʎ', 'ʏ', 'ʑ', 'ʒ', 'ʝ', 'ʲ', 'ˈ', 'ˌ', 'ː', '̃', '̩', 'β', 'θ', 'ᄀ', 'k͡p', 'ˈa', 'ɤ', 'ˈɛ', 'ˈi', 'ă', 'ˈe', 'ʔ', 'ŋ͡m', 'tʰ', 'ɤ̆', 'ᄌ', 'ᄍ', 'ᄎ', 'ᄏ', 'ᄐ', 'ᄑ', 'ᄒ', 'ᅡ', 'ᅢ', 'ᅣ', 'ᅤ', 'ᅥ', 'ᅦ', 'ᅧ', 'ᅨ', 'ᅩ', 'ᅪ', 'ᅫ', 'ᅬ', 'ᅭ', 'ᅮ', 'ᅯ', 'ᅰ', 'ᅱ', 'ᅲ', 'ᅳ', 'ᅴ', 'ᅵ', 'ᆨ', 'ᆫ', 'ᆮ', 'ᆯ', 'ᆷ', 'ᆸ', 'ᆼ', 'ㄸ', '!', '?', '…', ',', '.', "'", '-', 'SP', 'UNK'], 'model_dir': './logs/vi_speaker_merged', 'pretrain_G': None, 'pretrain_D': None, 'pretrain_dur': None, 'port': 10000}
+2026-06-12 01:36:18,140	vi_speaker_merged	WARNING	/content/vits2-melo/melo is not a git repository, therefore hash value comparison will be ignored.
+2026-06-12 01:36:22,426	vi_speaker_merged	INFO	Loaded checkpoint './logs/vi_speaker_merged/DUR_20000.pth' (iteration 17)
+2026-06-12 01:36:23,596	vi_speaker_merged	INFO	Loaded checkpoint './logs/vi_speaker_merged/G_20000.pth' (iteration 17)
+2026-06-12 01:36:26,026	vi_speaker_merged	INFO	Loaded checkpoint './logs/vi_speaker_merged/D_20000.pth' (iteration 17)
+2026-06-12 01:38:25,876	vi_speaker_merged	INFO	Train Epoch: 17 [3%]
+2026-06-12 01:38:25,879	vi_speaker_merged	INFO	[2.0244550704956055, 3.073265314102173, 16.00482177734375, 16.360111236572266, 1.6701879501342773, 1.4669873714447021, 20000, 0.0003]
+2026-06-12 01:49:10,972	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 17 to ./logs/vi_speaker_merged/G_20000.pth
+2026-06-12 01:49:25,348	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 17 to ./logs/vi_speaker_merged/D_20000.pth
+2026-06-12 01:49:38,570	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 17 to ./logs/vi_speaker_merged/DUR_20000.pth
+2026-06-12 01:57:00,513	vi_speaker_merged	INFO	Train Epoch: 17 [19%]
+2026-06-12 01:57:00,517	vi_speaker_merged	INFO	[1.9166955947875977, 3.1402978897094727, 18.43150520324707, 18.468345642089844, 1.6392858028411865, 1.3143055438995361, 20200, 0.0003]
+2026-06-12 02:03:50,439	vi_speaker_merged	INFO	Train Epoch: 17 [35%]
+2026-06-12 02:03:50,443	vi_speaker_merged	INFO	[2.1638224124908447, 2.9936280250549316, 16.929460525512695, 16.21578025817871, 1.685660719871521, 1.266276478767395, 20400, 0.0003]
+2026-06-12 02:10:27,161	vi_speaker_merged	INFO	Train Epoch: 17 [51%]
+2026-06-12 02:10:27,171	vi_speaker_merged	INFO	[1.9529094696044922, 3.054852247238159, 15.975503921508789, 16.94394874572754, 1.5848753452301025, 1.2939814329147339, 20600, 0.0003]
+2026-06-12 02:17:01,733	vi_speaker_merged	INFO	Train Epoch: 17 [67%]
+2026-06-12 02:17:01,737	vi_speaker_merged	INFO	[2.0774779319763184, 2.889415740966797, 15.556791305541992, 16.44938850402832, 1.6673130989074707, 1.4021742343902588, 20800, 0.0003]
+2026-06-12 02:23:33,239	vi_speaker_merged	INFO	Train Epoch: 17 [83%]
+2026-06-12 02:23:33,241	vi_speaker_merged	INFO	[2.0789458751678467, 2.911112070083618, 15.95691204071045, 15.980602264404297, 1.6887285709381104, 1.360193133354187, 21000, 0.0003]
+2026-06-12 02:29:59,525	vi_speaker_merged	INFO	Train Epoch: 17 [99%]
+2026-06-12 02:29:59,529	vi_speaker_merged	INFO	[2.0897936820983887, 2.687455177307129, 16.292720794677734, 17.833942413330078, 1.630590796470642, 1.2920739650726318, 21200, 0.0003]
+2026-06-12 02:30:27,872	vi_speaker_merged	INFO	====> Epoch: 17
+2026-06-12 02:36:40,416	vi_speaker_merged	INFO	Train Epoch: 18 [15%]
+2026-06-12 02:36:40,421	vi_speaker_merged	INFO	[2.056950330734253, 3.2170045375823975, 16.2736873626709, 16.313173294067383, 1.6639223098754883, 1.1377058029174805, 21400, 0.0002999625]
+2026-06-12 02:43:19,796	vi_speaker_merged	INFO	Train Epoch: 18 [31%]
+2026-06-12 02:43:19,804	vi_speaker_merged	INFO	[2.0789785385131836, 3.003805160522461, 19.22091293334961, 18.08095932006836, 1.7576282024383545, 1.4720820188522339, 21600, 0.0002999625]
+2026-06-12 02:50:01,250	vi_speaker_merged	INFO	Train Epoch: 18 [47%]
+2026-06-12 02:50:01,256	vi_speaker_merged	INFO	[1.9933311939239502, 2.936345338821411, 15.413612365722656, 15.126701354980469, 1.660020351409912, 1.2746981382369995, 21800, 0.0002999625]
+2026-06-12 02:56:39,996	vi_speaker_merged	INFO	Train Epoch: 18 [63%]
+2026-06-12 02:56:40,009	vi_speaker_merged	INFO	[2.1537227630615234, 2.9547343254089355, 19.26966667175293, 17.564254760742188, 1.62412428855896, 1.3916245698928833, 22000, 0.0002999625]
+2026-06-12 03:06:24,662	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 18 to ./logs/vi_speaker_merged/G_22000.pth
+2026-06-12 03:07:11,239	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 18 to ./logs/vi_speaker_merged/D_22000.pth
+2026-06-12 03:08:06,379	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 18 to ./logs/vi_speaker_merged/DUR_22000.pth
+2026-06-12 03:14:50,567	vi_speaker_merged	INFO	Train Epoch: 18 [79%]
+2026-06-12 03:14:50,577	vi_speaker_merged	INFO	[2.0381345748901367, 3.0129997730255127, 16.622386932373047, 16.639604568481445, 1.6847656965255737, 1.4555027484893799, 22200, 0.0002999625]
+2026-06-12 03:21:37,913	vi_speaker_merged	INFO	Train Epoch: 18 [95%]
+2026-06-12 03:21:37,922	vi_speaker_merged	INFO	[1.9310870170593262, 2.931682586669922, 19.202556610107422, 19.114601135253906, 1.7154953479766846, 1.5375447273254395, 22400, 0.0002999625]
+2026-06-12 03:23:47,891	vi_speaker_merged	INFO	====> Epoch: 18
+2026-06-12 03:28:31,221	vi_speaker_merged	INFO	Train Epoch: 19 [11%]
+2026-06-12 03:28:31,229	vi_speaker_merged	INFO	[1.7235755920410156, 3.2634193897247314, 19.22892951965332, 17.451358795166016, 1.6670172214508057, 1.4698173999786377, 22600, 0.0002999250046875]
+2026-06-12 03:35:19,393	vi_speaker_merged	INFO	Train Epoch: 19 [27%]
+2026-06-12 03:35:19,399	vi_speaker_merged	INFO	[2.0932435989379883, 2.9264328479766846, 16.00592041015625, 17.14897918701172, 1.641961693763733, 1.375404953956604, 22800, 0.0002999250046875]
+2026-06-12 03:42:00,479	vi_speaker_merged	INFO	Train Epoch: 19 [43%]
+2026-06-12 03:42:00,483	vi_speaker_merged	INFO	[2.0314157009124756, 2.866983413696289, 15.742377281188965, 15.504637718200684, 1.729443907737732, 1.31662118434906, 23000, 0.0002999250046875]
+2026-06-12 03:48:44,292	vi_speaker_merged	INFO	Train Epoch: 19 [59%]
+2026-06-12 03:48:44,299	vi_speaker_merged	INFO	[1.8698536157608032, 3.2018253803253174, 18.86756134033203, 18.371925354003906, 1.623970866203308, 1.430833101272583, 23200, 0.0002999250046875]
+2026-06-12 03:55:32,207	vi_speaker_merged	INFO	Train Epoch: 19 [75%]
+2026-06-12 03:55:32,211	vi_speaker_merged	INFO	[2.1069657802581787, 2.9496569633483887, 16.64166831970215, 16.855266571044922, 1.6796691417694092, 1.122420072555542, 23400, 0.0002999250046875]
+2026-06-12 04:02:17,441	vi_speaker_merged	INFO	Train Epoch: 19 [91%]
+2026-06-12 04:02:17,450	vi_speaker_merged	INFO	[1.895930290222168, 3.3339977264404297, 17.269468307495117, 17.66193962097168, 1.6600021123886108, 1.452375888824463, 23600, 0.0002999250046875]
+2026-06-12 04:06:00,947	vi_speaker_merged	INFO	====> Epoch: 19
+2026-06-12 04:09:09,034	vi_speaker_merged	INFO	Train Epoch: 20 [7%]
+2026-06-12 04:09:09,035	vi_speaker_merged	INFO	[1.9845116138458252, 3.133671760559082, 16.77263069152832, 16.639936447143555, 1.7072010040283203, 1.4538010358810425, 23800, 0.00029988751406191406]
+2026-06-12 04:15:56,500	vi_speaker_merged	INFO	Train Epoch: 20 [23%]
+2026-06-12 04:15:56,503	vi_speaker_merged	INFO	[2.1071529388427734, 3.2432467937469482, 18.024593353271484, 17.703834533691406, 1.6079375743865967, 1.444404125213623, 24000, 0.00029988751406191406]
+2026-06-12 04:25:07,488	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 20 to ./logs/vi_speaker_merged/G_24000.pth
+2026-06-12 04:26:05,524	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 20 to ./logs/vi_speaker_merged/D_24000.pth
+2026-06-12 04:27:06,340	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 20 to ./logs/vi_speaker_merged/DUR_24000.pth
+2026-06-12 04:27:10,998	vi_speaker_merged	INFO	.. Free up space by deleting ckpt ./logs/vi_speaker_merged/D_20000.pth
+2026-06-12 04:34:00,759	vi_speaker_merged	INFO	Train Epoch: 20 [39%]
+2026-06-12 04:34:00,768	vi_speaker_merged	INFO	[2.214156150817871, 2.967811346054077, 20.342681884765625, 17.863445281982422, 1.7102805376052856, 1.076573133468628, 24200, 0.00029988751406191406]
+2026-06-12 04:40:48,026	vi_speaker_merged	INFO	Train Epoch: 20 [55%]
+2026-06-12 04:40:48,032	vi_speaker_merged	INFO	[2.2675912380218506, 3.0837526321411133, 16.133262634277344, 16.35929298400879, 1.6482000350952148, 1.2754791975021362, 24400, 0.00029988751406191406]
+2026-06-12 04:47:40,358	vi_speaker_merged	INFO	Train Epoch: 20 [71%]
+2026-06-12 04:47:40,361	vi_speaker_merged	INFO	[2.14023494720459, 2.8771867752075195, 15.532827377319336, 15.99571418762207, 1.7215280532836914, 1.4958560466766357, 24600, 0.00029988751406191406]
+2026-06-12 04:54:31,760	vi_speaker_merged	INFO	Train Epoch: 20 [87%]
+2026-06-12 04:54:31,762	vi_speaker_merged	INFO	[1.9858596324920654, 3.1432342529296875, 19.063356399536133, 17.895795822143555, 1.7013813257217407, 1.2143408060073853, 24800, 0.00029988751406191406]
+2026-06-12 05:00:03,663	vi_speaker_merged	INFO	====> Epoch: 20
+2026-06-12 05:01:35,356	vi_speaker_merged	INFO	Train Epoch: 21 [3%]
+2026-06-12 05:01:37,774	vi_speaker_merged	INFO	[2.069489002227783, 2.9183197021484375, 15.425567626953125, 16.661237716674805, 1.6919474601745605, 1.3920177221298218, 25000, 0.00029985002812265633]
+2026-06-12 05:08:33,117	vi_speaker_merged	INFO	Train Epoch: 21 [19%]
+2026-06-12 05:08:33,125	vi_speaker_merged	INFO	[2.1000795364379883, 3.3656253814697266, 18.184898376464844, 17.411869049072266, 1.795962929725647, 1.1192790269851685, 25200, 0.00029985002812265633]
+2026-06-12 05:15:19,676	vi_speaker_merged	INFO	Train Epoch: 21 [35%]
+2026-06-12 05:15:19,678	vi_speaker_merged	INFO	[2.1720807552337646, 2.773021936416626, 15.606627464294434, 15.764602661132812, 1.695298194885254, 1.5560210943222046, 25400, 0.00029985002812265633]
+2026-06-12 05:22:17,588	vi_speaker_merged	INFO	Train Epoch: 21 [51%]
+2026-06-12 05:22:17,594	vi_speaker_merged	INFO	[1.9241819381713867, 3.2235631942749023, 18.566585540771484, 17.399049758911133, 1.631011724472046, 1.3393182754516602, 25600, 0.00029985002812265633]
+2026-06-12 05:29:06,742	vi_speaker_merged	INFO	Train Epoch: 21 [67%]
+2026-06-12 05:29:06,749	vi_speaker_merged	INFO	[1.9547863006591797, 2.920459032058716, 16.499975204467773, 16.126266479492188, 1.6276423931121826, 1.5445536375045776, 25800, 0.00029985002812265633]
+2026-06-12 05:36:00,085	vi_speaker_merged	INFO	Train Epoch: 21 [83%]
+2026-06-12 05:36:00,089	vi_speaker_merged	INFO	[2.2286760807037354, 2.6844630241394043, 16.485885620117188, 15.442584991455078, 1.614725947380066, 1.2016870975494385, 26000, 0.00029985002812265633]
+2026-06-12 05:44:46,158	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 21 to ./logs/vi_speaker_merged/G_26000.pth
+2026-06-12 05:45:37,381	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 21 to ./logs/vi_speaker_merged/D_26000.pth
+2026-06-12 05:46:38,616	vi_speaker_merged	INFO	Saving model and optimizer state at iteration 21 to ./logs/vi_speaker_merged/DUR_26000.pth
+2026-06-12 05:46:38,686	vi_speaker_merged	INFO	.. Free up space by deleting ckpt ./logs/vi_speaker_merged/DUR_20000.pth
+2026-06-12 05:46:38,707	vi_speaker_merged	INFO	.. Free up space by deleting ckpt ./logs/vi_speaker_merged/D_22000.pth
