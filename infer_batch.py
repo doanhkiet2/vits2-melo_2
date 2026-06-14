@@ -120,7 +120,27 @@ Nhưng đến nay, hắn vẫn chưa thể đột phá Trúc Cơ.
 Vương Thiệu không hề tức giận, trái lại còn mỉm cười nho nhã nói với Liễu Vân Tâm: “Huynh trưởng của cô tham gia kỳ tuyển chọn, chắc là vì muốn vào tông môn để lấy linh dược, linh đan chữa bệnh cho cô.
 
 Tình cảm huynh muội sâu nặng như vậy, ta rất cảm động.
-    """
+    """,
+        # 4
+    "Lão già chống gậy đứng lặng hồi lâu rồi mới chậm chạp quay người rời đi.",
+
+    # 5
+    "Từng tia chớp xé toạc bầu trời đen kịt, khiến đám trẻ hoảng hốt nép sát vào nhau.",
+
+    # 6
+    "Mặc dù đã chuẩn bị tâm lý từ trước, hắn vẫn không khỏi kinh ngạc khi nhìn thấy cảnh tượng trước mắt.",
+
+    # 7
+    "Ba trăm sáu mươi lăm ngày qua đi, mọi thứ dường như đã thay đổi nhưng ký ức ấy vẫn còn nguyên vẹn.",
+
+    # 8
+    "Chiếc trực thăng bay vòng qua đỉnh núi rồi nhanh chóng biến mất giữa tầng mây dày đặc.",
+
+    # 9
+    "Nếu không tận mắt chứng kiến, e rằng chẳng ai tin nổi chuyện kỳ lạ như vậy lại thực sự xảy ra.",
+
+    # 10
+    "Tiểu Thanh khẽ mím môi, ánh mắt vừa có chút do dự vừa mang theo vẻ kiên định hiếm thấy."
 
     
 ]
