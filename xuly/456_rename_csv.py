@@ -1,7 +1,7 @@
 import re
 
-input_file = "/content/va-data/kaggle/working/vits2-melo/melo/data/vi_speaker_44100_456/train.list"
-output_file = "/content/va-data/kaggle/working/vits2-melo/melo/data/vi_speaker_44100_456/train2.list"
+input_file = "/content/va-data/kaggle/working/vits2-melo/melo/data/vi_speaker_44100_789/train.list"
+output_file = "/content/va-data/kaggle/working/vits2-melo/melo/data/vi_speaker_44100_789/train2.list"
 
 # copy_pattern = re.compile(r"\s*-\s*Copy\s*\((\d+)\)", re.IGNORECASE)
 
@@ -19,16 +19,16 @@ with open(input_file, "r", encoding="utf-8") as fin, \
 
         # part4/5/6 -> 456
         path = path.replace(
-            "vi_speaker_44100_part4",
-            "vi_speaker_44100_456"
+            "vi_speaker_44100_part7",
+            "vi_speaker_44100_789"
         )
         path = path.replace(
-            "vi_speaker_44100_part5",
-            "vi_speaker_44100_456"
+            "vi_speaker_44100_part8",
+            "vi_speaker_44100_789"
         )
         path = path.replace(
-            "vi_speaker_44100_part6",
-            "vi_speaker_44100_456"
+            "vi_speaker_44100_part9",
+            "vi_speaker_44100_789"
         )
 
         # " - Copy (9)" -> "9"
