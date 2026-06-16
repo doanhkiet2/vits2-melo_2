@@ -76,7 +76,7 @@ class TTS(nn.Module):
         return audio_segments
 
     @staticmethod
-    # ---------------------thêm vào để nomilize âm thanh đồng nhât
+    # ---------------------thêm vào để normilize âm thanh đồng nhât
     def normalize_rms(audio, target_db=-20.0, eps=1e-8, peak_limit=0.98):
         audio = audio.astype(np.float32)
 
@@ -167,7 +167,7 @@ class TTS(nn.Module):
                 del x_tst, tones, lang_ids, bert, ja_bert, x_tst_lengths, speakers
                 #
             # -------------------
-            # nomilize âm thanh
+            # normilize âm thanh
             audio_list.append(audio)
             # audio = self.normalize_rms(audio, target_db=-20.0)
             # audio_list.append(audio)
